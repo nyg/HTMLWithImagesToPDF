@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N2j-hV-b1o">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="O8A-v7-qAE">
+            <objects>
+                <viewController id="N2j-hV-b1o" customClass="ViewController" customModule="HTMLWithImagesToPDF" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uzh-Hb-A8b"/>
+                        <viewControllerLayoutGuide type="bottom" id="19O-AR-BMH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w8O-SD-0ne">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VJ2-nb-bnH">
+                                <rect key="frame" x="16" y="28" width="343" height="631"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="aja-nW-cD2" customClass="WKWebViewWrapper" customModule="HTMLWithImagesToPDF" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="292.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <webView contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="hUO-6c-4J2">
+                                        <rect key="frame" x="0.0" y="300.5" width="343" height="292.5"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </webView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DeY-Fi-LhM">
+                                        <rect key="frame" x="0.0" y="601" width="343" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahh-CT-j5T">
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="30"/>
+                                                <state key="normal" title="Load HTML"/>
+                                                <connections>
+                                                    <action selector="loadHTML" destination="N2j-hV-b1o" eventType="touchUpInside" id="fcJ-AZ-60w"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IF1-Rj-Mku">
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="30"/>
+                                                <state key="normal" title="Create PDF"/>
+                                                <connections>
+                                                    <action selector="generatePDF" destination="N2j-hV-b1o" eventType="touchUpInside" id="O0o-XX-qZu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSX-6b-4rV">
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="30"/>
+                                                <state key="normal" title="Print PDF"/>
+                                                <connections>
+                                                    <action selector="printPDF" destination="N2j-hV-b1o" eventType="touchUpInside" id="9B5-OL-FBn"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hUO-6c-4J2" firstAttribute="height" secondItem="aja-nW-cD2" secondAttribute="height" id="HR6-Ku-ldK"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VJ2-nb-bnH" firstAttribute="bottom" secondItem="19O-AR-BMH" secondAttribute="top" constant="-8" id="3cs-57-DUi"/>
+                            <constraint firstItem="VJ2-nb-bnH" firstAttribute="top" secondItem="uzh-Hb-A8b" secondAttribute="bottom" constant="8" id="6Uw-zx-QWn"/>
+                            <constraint firstItem="VJ2-nb-bnH" firstAttribute="trailing" secondItem="w8O-SD-0ne" secondAttribute="trailingMargin" id="lmt-K8-rSh"/>
+                            <constraint firstItem="VJ2-nb-bnH" firstAttribute="leading" secondItem="w8O-SD-0ne" secondAttribute="leadingMargin" id="tfV-S3-mkH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="uiWebView" destination="hUO-6c-4J2" id="hRi-oC-3G7"/>
+                        <outlet property="wkWebView" destination="aja-nW-cD2" id="VfS-e8-gkT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DQD-kV-rjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104.8" y="34.632683658170919"/>
+        </scene>
+    </scenes>
+</document>

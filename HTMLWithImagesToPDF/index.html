@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>HTML With Images to PDF</title>
+        <style media="screen">
+            body {
+                background-color: grey
+            }
+        </style>
+    </head>
+    <body>
+        <p>Image loaded from the Web:</p>
+        <img src="https://i.imgur.com/wxaJsXF.png" alt="web-img">
+        <p>Image loaded from the Xcode project with relative path:</p>
+        <img src="apple.png" alt="xcode-img-rel">
+        <p>Image loaded from the Xcode project with absolute path:</p>
+        <img src="{{ABS_PATH}}" alt="xcode-img-abs">
+        <p>Image loaded from the Web:</p>
+        <img src="data:image/png;base64,{{BASE64_IMG}}" alt="base64-img">
+    </body>
+</html>
