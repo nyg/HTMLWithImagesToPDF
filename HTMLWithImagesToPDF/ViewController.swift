@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     // MARK: IBActions
 
     /**
-     Get HTML code and load it into both web views.
+     Load either the index.html or index-img.html into both web views.
      */
     @IBAction func loadHTML() {
 
@@ -36,10 +36,19 @@ class ViewController: UIViewController {
             generateAndLoad("index-img")
         }
 
+        alertController.addAction(title: "Cancel", style: .cancel)
+
         present(alertController, animated: true)
     }
 
-    @IBAction func generatePDF() {
+    /**
+     Allows the creation of a PDF from different sources:
+       1. what is currently displayed in the web views
+       2. the index.html file
+
+     The resulting PDFs are displayed in the web views.
+    */
+    @IBAction func createPDF() {
 
         let alertController = UIAlertController(title: "Create PDF", message: "Choose the UIPrintFormatter that should be given to the UIPrintPageRenderer to create the PDF.", preferredStyle: .actionSheet)
 
@@ -63,9 +72,12 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
 
+    /**
+     Shows the print controller.
+     */
     @IBAction func printPDF() {
 
-        let alertController = UIAlertController(title: "Print PDF", message: "Choose the UIPrintFormatter that should be given to the UIPrintPageRenderer to create the PDF.", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "Print PDF", message: "Choose the UIPrintFormatter to be used by the UIPrintInteractionController.", preferredStyle: .actionSheet)
         let printController = UIPrintInteractionController.shared
 
         func presentPrintController() {
@@ -96,6 +108,9 @@ class ViewController: UIViewController {
 
     // MARK: Private methods
 
+    /**
+     Generates the HTML string to be given to either one of the web views or the UIMarkupTextPrintFormatter.
+     */
     private func generateHTML(withName fileName: String) -> String {
 
         // get index.html file path
@@ -120,6 +135,9 @@ class ViewController: UIViewController {
         return html.replacingOccurrences(of: "{{BASE64_IMG}}", with: base64)
     }
 
+    /**
+     Generates a PDF using the given print formatter.
+     */
     private func generatePDF(printFormatter: UIPrintFormatter) -> (URL, Data) {
 
         // assign the print formatter to the print page renderer
@@ -153,6 +171,13 @@ class ViewController: UIViewController {
 
         print(pdfFile)
         return (pdfFile, pdfData as Data)
+    }
+
+    // MARK: View controller
+
+    override func viewDidLoad() {
+        wkWebView.layer.borderWidth = 1
+        uiWebView.layer.borderWidth = 1
     }
 
     // MARK: Helpers

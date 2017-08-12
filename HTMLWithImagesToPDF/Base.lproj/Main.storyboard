@@ -22,19 +22,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VJ2-nb-bnH">
-                                <rect key="frame" x="16" y="28" width="343" height="631"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VJ2-nb-bnH">
+                                <rect key="frame" x="16" y="28" width="343" height="635"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WKWebView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bj3-mb-hE9">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="14"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="aja-nW-cD2" customClass="WKWebViewWrapper" customModule="HTMLWithImagesToPDF" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="292.5"/>
+                                        <rect key="frame" x="0.0" y="18" width="343" height="281"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIWebView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWr-FU-PAO">
+                                        <rect key="frame" x="0.0" y="303" width="343" height="14"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <webView contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="hUO-6c-4J2">
-                                        <rect key="frame" x="0.0" y="300.5" width="343" height="292.5"/>
+                                        <rect key="frame" x="0.0" y="321" width="343" height="280"/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </webView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DeY-Fi-LhM">
-                                        <rect key="frame" x="0.0" y="601" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="605" width="343" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahh-CT-j5T">
                                                 <rect key="frame" x="0.0" y="0.0" width="114.5" height="30"/>
@@ -47,7 +59,7 @@
                                                 <rect key="frame" x="114.5" y="0.0" width="114" height="30"/>
                                                 <state key="normal" title="Create PDF"/>
                                                 <connections>
-                                                    <action selector="generatePDF" destination="N2j-hV-b1o" eventType="touchUpInside" id="O0o-XX-qZu"/>
+                                                    <action selector="createPDF" destination="N2j-hV-b1o" eventType="touchUpInside" id="Pwy-fg-tRE"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSX-6b-4rV">
@@ -67,7 +79,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VJ2-nb-bnH" firstAttribute="bottom" secondItem="19O-AR-BMH" secondAttribute="top" constant="-8" id="3cs-57-DUi"/>
+                            <constraint firstItem="VJ2-nb-bnH" firstAttribute="bottom" secondItem="19O-AR-BMH" secondAttribute="top" constant="-4" id="3cs-57-DUi"/>
                             <constraint firstItem="VJ2-nb-bnH" firstAttribute="top" secondItem="uzh-Hb-A8b" secondAttribute="bottom" constant="8" id="6Uw-zx-QWn"/>
                             <constraint firstItem="VJ2-nb-bnH" firstAttribute="trailing" secondItem="w8O-SD-0ne" secondAttribute="trailingMargin" id="lmt-K8-rSh"/>
                             <constraint firstItem="VJ2-nb-bnH" firstAttribute="leading" secondItem="w8O-SD-0ne" secondAttribute="leadingMargin" id="tfV-S3-mkH"/>
