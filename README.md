@@ -30,7 +30,7 @@ This tells me two things:
 
 The `Create PDF` > `WebView.viewPrintFormatter()` action creates a PDF from what each web view is **currently** displaying, that can either be nothing, one of the HTML loaded beforehand or a PDF loaded from a previous execution.
 
-The `Create PDF` > `WebView.viewPrintFormatter()` action always creates the PDF from the `index.html` file.
+The `Create PDF` > `UIMarkupTextPrintFormatter` action always creates the PDF from the `index.html` file.
 
 ## iOS 11
 
