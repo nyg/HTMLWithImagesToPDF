@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N2j-hV-b1o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N2j-hV-b1o">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Menlo.ttc">
+            <string>Menlo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="O8A-v7-qAE">
@@ -25,45 +29,59 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VJ2-nb-bnH">
                                 <rect key="frame" x="16" y="28" width="343" height="635"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WKWebView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bj3-mb-hE9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="WKWebView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bj3-mb-hE9">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="14"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="aja-nW-cD2" customClass="WKWebViewWrapper" customModule="HTMLWithImagesToPDF" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="18" width="343" height="281"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIWebView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWr-FU-PAO">
-                                        <rect key="frame" x="0.0" y="303" width="343" height="14"/>
+                                    <wkWebView contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="7Eo-OM-eWo">
+                                        <rect key="frame" x="0.0" y="18" width="343" height="283.5"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </wkWebView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="UIWebView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWr-FU-PAO">
+                                        <rect key="frame" x="0.0" y="305.5" width="343" height="14"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <webView contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="hUO-6c-4J2">
-                                        <rect key="frame" x="0.0" y="321" width="343" height="280"/>
+                                        <rect key="frame" x="0.0" y="323.5" width="343" height="283.5"/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </webView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DeY-Fi-LhM">
-                                        <rect key="frame" x="0.0" y="605" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="611" width="343" height="24"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahh-CT-j5T">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="24"/>
                                                 <state key="normal" title="Load HTML"/>
                                                 <connections>
                                                     <action selector="loadHTML" destination="N2j-hV-b1o" eventType="touchUpInside" id="fcJ-AZ-60w"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IF1-Rj-Mku">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="30"/>
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="24"/>
                                                 <state key="normal" title="Create PDF"/>
                                                 <connections>
                                                     <action selector="createPDF" destination="N2j-hV-b1o" eventType="touchUpInside" id="Pwy-fg-tRE"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSX-6b-4rV">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="30"/>
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="24"/>
                                                 <state key="normal" title="Print PDF"/>
                                                 <connections>
                                                     <action selector="printPDF" destination="N2j-hV-b1o" eventType="touchUpInside" id="9B5-OL-FBn"/>
@@ -73,7 +91,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="hUO-6c-4J2" firstAttribute="height" secondItem="aja-nW-cD2" secondAttribute="height" id="HR6-Ku-ldK"/>
+                                    <constraint firstItem="hUO-6c-4J2" firstAttribute="height" secondItem="7Eo-OM-eWo" secondAttribute="height" id="ucB-IB-y7P"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -87,7 +105,7 @@
                     </view>
                     <connections>
                         <outlet property="uiWebView" destination="hUO-6c-4J2" id="hRi-oC-3G7"/>
-                        <outlet property="wkWebView" destination="aja-nW-cD2" id="VfS-e8-gkT"/>
+                        <outlet property="wkWebView" destination="7Eo-OM-eWo" id="a9X-EX-XT1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQD-kV-rjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
