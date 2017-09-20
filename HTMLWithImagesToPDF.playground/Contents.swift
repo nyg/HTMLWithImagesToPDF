@@ -8,7 +8,7 @@ import UIKit
 ///
 func getHTML(from htmlFile: URL) -> String {
 
-    guard var htmlContent = try? String(contentsOf: htmlFile)
+    guard let htmlContent = try? String(contentsOf: htmlFile)
         else { fatalError("Error getting HTML file content.") }
 
     guard let imgURL = Bundle.main.url(forResource: "apple", withExtension: "png")
