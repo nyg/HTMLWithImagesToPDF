@@ -6,6 +6,7 @@ import UIKit
 /// - parameters:
 ///   - htmlFile: The HTML file.
 ///
+/// - returns: The transformed HTML code.
 func getHTML(from htmlFile: URL) -> String {
 
     guard let htmlContent = try? String(contentsOf: htmlFile)
